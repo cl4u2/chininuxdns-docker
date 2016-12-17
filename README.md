@@ -1,7 +1,7 @@
 DNS basato su chininux
 ======================
 Container docker per DNS basato su [chininux](https://github.com/ninuxorg/chininux).
-Scarica le associazioni tra indirizzi IP (ninux)[http://wiki.ninux.org] e nomi dall'API di [nodeshot](https://github.com/ninuxorg/nodeshot) periodicamente.
+Scarica le associazioni tra indirizzi IP [ninux](http://wiki.ninux.org) e nomi dall'API di [nodeshot](https://github.com/ninuxorg/nodeshot) periodicamente.
 Permette di fare lookup e reverse lookup sugli indirizzi IP ninux.
 
 
