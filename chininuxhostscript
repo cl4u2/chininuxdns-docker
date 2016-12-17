@@ -1,0 +1,13 @@
+#!/bin/sh
+
+CHININUXPATH="/root/chininux/"
+HOSTSDIR="/etc/chosts/"
+
+#TODO sleep some random time
+
+cd $CHININUXPATH
+export PYTHONPATH="${CHININUXPATH}:${PYTHONPATH}"
+python ${CHININUXPATH}/chininuxhosts > ${HOSTSDIR}/current
+
+#TODO check actual output of the above command
+
