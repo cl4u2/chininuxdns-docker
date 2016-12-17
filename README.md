@@ -29,6 +29,8 @@ lanciare il container docker
 docker run -d -p 53:53/udp chininuxdns
 ```
 
+E configurare opportunamente il proprio firewall.
+
 
 Test
 ----
@@ -36,6 +38,8 @@ Test
 reverse lookup di un indirizzo ninux
 ```
 dig @127.0.0.1 -x 172.16.176.1
+
+dig @127.0.0.1 -x 2001:4c00:893b:1:176::1
 ```
 
 lookup di un indirizzo Internet
