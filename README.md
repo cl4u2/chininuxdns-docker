@@ -47,3 +47,47 @@ lookup di un indirizzo Internet
 dig @127.0.0.1 wiki.ninux.org
 ```
 
+
+Installazione manuale (no docker)
+---------------------------------
+
+Installare tramite il gestore di pacchetti della propria distribuzione Linux (per esempio apt-get) i pacchetti python2.7, dnsmasq e git.
+
+Scaricare o clonare con git questo repository nella directory `/root/chininux-docker`.
+
+Clonare con git il repository di chininux in `/root/chininux` e scaricare le dipendenze con pip:
+```
+git clone https://github.com/ninuxorg/chininux /root/chininux
+cd /root/chininux
+git submodule init
+git submodule update
+pip install -r /root/chininux/requirements.txt
+```
+
+Copiare da questo repository la configurazione di chininux:
+```
+cp /root/chininux-docker/settings.py /root/chininux/
+```
+
+Creare la directory da cui dnsmasq leggera' il file hosts prodotto da chininux:
+```
+mkdir -p /etc/chosts
+```
+
+Aggiungere al cron lo script che chiama periodicamente chininux per produrre il file hosts. Per esempio:
+```
+cp /root/chininux-dcoker/chininuxhostscript /etc/cron.hourly/chininuxhostscript
+chmod +x /etc/cron.hourly/chininuxhostscript
+```
+
+E lanciarlo una volta per inizializzare il file hosts in /etc/chosts/:
+```
+/etc/cron.hourly/chininuxhostscript
+```
+
+Infine, dopo aver configurato opportunamente i propri firewall, lanciare dnsmasq:
+```
+dnsmasq -d --hostsdir=/etc/hosts -C /root/chininux-docker/dnsmasq.conf
+```
+
+
