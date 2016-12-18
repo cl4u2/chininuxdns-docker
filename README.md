@@ -5,7 +5,7 @@ Scarica le associazioni tra indirizzi IP [ninux](http://wiki.ninux.org) e nomi d
 Permette di fare lookup e reverse lookup sugli indirizzi IP ninux.
 
 
-English: chinux-based DNS
+English: chininux-based DNS
 -------------------------
 
 [chininux](https://github.com/ninuxorg/chininux) based DNS docker container.
